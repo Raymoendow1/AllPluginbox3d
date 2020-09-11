@@ -104,6 +104,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         return -1
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # ~~ StartupPlugin mixin
     def on_after_startup(self):
         self.pwm_instances = []
@@ -121,6 +122,8 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         self.start_timer()
         self.print_complete = False
 =======
+=======
+>>>>>>> parent of 7d5566d... It works, first uninstall plugin, than install it again, or use pip upgrade ...
     # # ~~ StartupPlugin mixin
     # def on_after_startup(self):
     #     self._logger.info("On_after startup finnished")
@@ -141,6 +144,9 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
     #     for pin in rpi_outputs:
     #         self._logger.info("rpi_outputs: (%s)\n" % pin)
     #     self._logger.info("On_after startup finnished")
+<<<<<<< HEAD
+>>>>>>> parent of 7d5566d... It works, first uninstall plugin, than install it again, or use pip upgrade ...
+=======
 >>>>>>> parent of 7d5566d... It works, first uninstall plugin, than install it again, or use pip upgrade ...
 
     def get_settings_version(self):
