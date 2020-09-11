@@ -105,11 +105,10 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
 
     # ~~ StartupPlugin mixin
     def on_after_startup(self):
-        self._logger.info("On_after startup finnished")
         self.pwm_instances = []
         self.event_queue = []
         self.rpi_outputs_not_changed = []
-        self.rpi_outputs = self._settings.get(["rpi_outputs"])
+        self.rpi_outputs = self._settings.get(["rpi_outputs"]) # ALL the data seen in self.addRpiOutput
         self.rpi_inputs = self._settings.get(["rpi_inputs"])
         self.notifications = self._settings.get(["notifications"])
         self.generate_temp_hum_control_status()
@@ -120,9 +119,6 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         self.handle_initial_gpio_control()
         self.start_timer()
         self.print_complete = False
-        for pin in self.rpi_outputs:
-            self._logger.info("rpi_outputs: (%s)\n" % pin)
-        self._logger.info("On_after startup finnished")
 
     def get_settings_version(self):
         return 6
