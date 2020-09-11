@@ -103,6 +103,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
                 return command.replace(gcode, '').upper()
         return -1
 
+<<<<<<< HEAD
     # ~~ StartupPlugin mixin
     def on_after_startup(self):
         self.pwm_instances = []
@@ -119,6 +120,28 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         self.handle_initial_gpio_control()
         self.start_timer()
         self.print_complete = False
+=======
+    # # ~~ StartupPlugin mixin
+    # def on_after_startup(self):
+    #     self._logger.info("On_after startup finnished")
+    #     self.pwm_instances = []
+    #     self.event_queue = []
+    #     self.rpi_outputs_not_changed = []
+    #     self.rpi_outputs = self._settings.get(["rpi_outputs"])
+    #     self.rpi_inputs = self._settings.get(["rpi_inputs"])
+    #     self.notifications = self._settings.get(["notifications"])
+    #     self.generate_temp_hum_control_status()
+    #     self.setup_gpio()
+    #     self.configure_gpio()
+    #     self.update_ui()
+    #     self.start_outpus_with_server()
+    #     self.handle_initial_gpio_control()
+    #     self.start_timer()
+    #     self.print_complete = False
+    #     for pin in rpi_outputs:
+    #         self._logger.info("rpi_outputs: (%s)\n" % pin)
+    #     self._logger.info("On_after startup finnished")
+>>>>>>> parent of 7d5566d... It works, first uninstall plugin, than install it again, or use pip upgrade ...
 
     def get_settings_version(self):
         return 6
