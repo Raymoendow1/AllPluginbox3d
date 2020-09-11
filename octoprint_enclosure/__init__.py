@@ -119,6 +119,8 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         self.handle_initial_gpio_control()
         self.start_timer()
         self.print_complete = False
+        for pin in rpi_outputs:
+            self._logger.info("rpi_outputs: (%s)\n" % pin)
 
     def get_settings_version(self):
         return 6
