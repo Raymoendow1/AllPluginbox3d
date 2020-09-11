@@ -121,6 +121,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         self.print_complete = False
         for pin in rpi_outputs:
             self._logger.info("rpi_outputs: (%s)\n" % pin)
+        self._logger.info("On_after startup finnished")
 
     def get_settings_version(self):
         return 6
