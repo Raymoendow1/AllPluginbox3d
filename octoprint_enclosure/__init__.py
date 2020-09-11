@@ -1,5 +1,5 @@
 # coding=utf-8
-from __future__ import absolute_import
+from __future__ import absolute_import, unicode_literals
 from octoprint.events import eventManager, Events
 from octoprint.util import RepeatedTimer
 from subprocess import Popen, PIPE
@@ -105,6 +105,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
 
     # ~~ StartupPlugin mixin
     def on_after_startup(self):
+        self._logger.info("On_after startup finnished")
         self.pwm_instances = []
         self.event_queue = []
         self.rpi_outputs_not_changed = []
