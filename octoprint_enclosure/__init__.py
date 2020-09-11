@@ -120,7 +120,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         self.handle_initial_gpio_control()
         self.start_timer()
         self.print_complete = False
-        for pin in rpi_outputs:
+        for pin in self.rpi_outputs:
             self._logger.info("rpi_outputs: (%s)\n" % pin)
         self._logger.info("On_after startup finnished")
 
