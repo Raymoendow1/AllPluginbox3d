@@ -284,7 +284,6 @@ $(function () {
     self.bindFromSettings = function(){
       self.rpi_outputs(self.settingsViewModel.settings.plugins.enclosure.rpi_outputs());
       self.rpi_inputs(self.settingsViewModel.settings.plugins.enclosure.rpi_inputs());
-      self.slider_implementation(self.settingsViewModel.settings.plugins.enclosure.slider_implementation());
       self.use_sudo(self.settingsViewModel.settings.plugins.enclosure.use_sudo());
       self.gcode_control(self.settingsViewModel.settings.plugins.enclosure.gcode_control());
       self.neopixel_dma(self.settingsViewModel.settings.plugins.enclosure.neopixel_dma());
@@ -424,7 +423,7 @@ $(function () {
         ledstrip_gpio_dat: ko.observable(""),
         microcontroller_address: ko.observable(0),
         gcode: ko.observable(""),
-        // slider_implementation: ko.observable(false),
+        slider_implementation: ko.observable(false),
         show_on_navbar: ko.observable(false)
       });
 
