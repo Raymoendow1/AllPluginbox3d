@@ -468,21 +468,7 @@
     </div>
     <!-- /ko -->
 
-    <div class="control-group">
-      <a title="Delete IO" class="btn btn-danger pull-right" data-bind="click: function() { $parent.removeRpiOutput($data) }">
-        <i class="icon-trash"></i>
-      </a>
-    </div>
-    <div class="control-group">
-      <div class="controls">
-        <hr/>
-      </div>
-    </div>
-  </div>
-  <div class="control-group">
-    <button class="btn pull-right" data-bind="click: function() { $root.addRpiOutput(); }">Add Outputs...</button>
-  </div>
-  
+    
 
 
 
@@ -511,6 +497,22 @@
 
 
 
+
+    <div class="control-group">
+      <a title="Delete IO" class="btn btn-danger pull-right" data-bind="click: function() { $parent.removeRpiOutput($data) }">
+        <i class="icon-trash"></i>
+      </a>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <hr/>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <button class="btn pull-right" data-bind="click: function() { $root.addRpiOutput(); }">Add Outputs...</button>
+  </div>
+  
 </form>
 <h4>{{ _('Raspberry Pi Inputs') }}</h4>
 <p>
