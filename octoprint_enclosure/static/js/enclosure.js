@@ -658,15 +658,15 @@ $(function () {
       }
     };
 
-    self.handleShellSlicer = function(item){
-      var index = item.index_id();
-      var sliderbool = item.use_slider();
-      new PNotify({
-        title: "Using slider",
-        text: "A slider has been chosen to adjust a scripts value.",
-        type: "text"
-      });
-    }
+    // self.handleShellSlicer = function(item){
+    //   var index = item.index_id();
+    //   var sliderbool = item.use_slider();
+    //   new PNotify({
+    //     title: "Using slider",
+    //     text: "A slider has been chosen to adjust a scripts value.",
+    //     type: "text"
+    //   });
+    // }
 
     self.handleLedstripColor = function (item) {
       var index = item.index_id() ;
