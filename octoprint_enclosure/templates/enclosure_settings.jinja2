@@ -265,16 +265,16 @@
 
     <!-- ko if: ($data.output_type() == "regular" || $data.output_type() == "gcode_output" ||  $data.output_type() == "shell_output" ||  $data.output_type() == "ledstrip") -->
     {# <!-- ko if: ($data.output_type() == "shell_output") --> #}
-    <div class="control-group">
+    {# <div class="control-group">
       <div class="controls">
         <label class="checkbox">
           <input type="checkbox" 
           data-bind="checked: use_slider"
-          {# >{{ _('Slider implementation') }} #}
+          >{{ _('Slider implementation') }}
         </label>
         <span class="help-inline">Choose if input of command will be the val of the slider.</span>
       </div>
-    </div>
+    </div> #}
     {# <!-- /ko --> #}
     <div class="control-group">
       <div class="controls">
