@@ -268,13 +268,22 @@
     <div class="control-group">
       <div class="controls">
         <label class="checkbox">
-          <input type="checkbox" data-bind="checked: slider_implementation"> {{ _('Slider implementation') }}
+          <input type="checkbox" 
+          {# data-bind="checked: slider_implementation" #}
+          >{{ _('Slider implementation') }}
         </label>
         <span class="help-inline">Choose if input of command will be the val of the slider.</span>
       </div>
     </div>
     <!-- /ko -->
-
+    <div class="control-group">
+      <div class="controls">
+        <label class="checkbox">
+          <input type="checkbox" data-bind="checked: hide_btn_ui"> {{ _('Hide UI Button') }}
+        </label>
+        <span class="help-inline">If you plan to use a physical button (INPUT) and want to hide the button from enclosure tab check this.</span>
+      </div>
+    </div>
     <!-- ko ifnot: ($data.output_type() == "ledstrip") -->
     <div class="control-group">
       <div class="controls">

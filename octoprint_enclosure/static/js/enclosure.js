@@ -376,7 +376,6 @@ $(function () {
         label: ko.observable("Ouput " + nextIndex),
         output_type: ko.observable("regular"),
         shell_script: ko.observable(""),
-        slider_implementation: ko.observable(false),
         gpio_pin: ko.observable(0),
         gpio_status: ko.observable(false),
         hide_btn_ui: ko.observable(false),
@@ -422,6 +421,7 @@ $(function () {
         ledstrip_gpio_dat: ko.observable(""),
         microcontroller_address: ko.observable(0),
         gcode: ko.observable(""),
+        slider_implementation: ko.observable(false),
         show_on_navbar: ko.observable(false)
       });
 
