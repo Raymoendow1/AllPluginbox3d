@@ -422,7 +422,7 @@ $(function () {
         microcontroller_address: ko.observable(0),
         gcode: ko.observable(""),
         show_on_navbar: ko.observable(false),
-        slider: ko.observable(false)
+        slider_implementation: ko.observable(false)
       });
 
     };
