@@ -182,31 +182,6 @@
 
 
 
-
-
-
-
-    <!-- ko if: ($data.output_type() == "shell_output") -->
-    <div class="control-group">
-      <div class="controls">
-        <label class="checkbox">
-          <input type="checkbox" 
-          data-bind="checked: slider_implementation"
-          > {{ _('Slider implementation') }}
-        </label>
-        <span class="help-inline">Choose if input of command will be the val of the slider</span>
-      </div>
-    </div>
-    <!-- /ko -->
-
-
-
-
-
-
-
-
-
     <!-- ko ifnot: (($data.output_type() == "regular" || $data.output_type() == "pwm") &&  $data.toggle_timer()) -->
     <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output") -->
     <!-- ko ifnot: ($data.output_type() == "pwm" && $data.pwm_temperature_linked()) -->
@@ -507,6 +482,35 @@
   <div class="control-group">
     <button class="btn pull-right" data-bind="click: function() { $root.addRpiOutput(); }">Add Outputs...</button>
   </div>
+  
+
+
+
+
+
+    <!-- ko if: ($data.output_type() == "shell_output") -->
+    <div class="control-group">
+      <div class="controls">
+        <label class="checkbox">
+          <input type="checkbox" 
+          data-bind="checked: slider_implementation"
+          > {{ _('Slider implementation') }}
+        </label>
+        <span class="help-inline">Choose if input of command will be the val of the slider</span>
+      </div>
+    </div>
+    <!-- /ko -->
+
+
+
+
+
+
+
+
+
+
+
 </form>
 <h4>{{ _('Raspberry Pi Inputs') }}</h4>
 <p>
