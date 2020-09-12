@@ -109,12 +109,13 @@
         </div>
         <div class="control-group">
             <div class="controls">
+            <label class="control-label">{{ _('Slider') }}</label>
                 <label class="checkbox">
                     <input type="checkbox"
-                     {# data-bind="checked: auto_shutdown">  #}
+                     data-bind="checked: use_slider"> 
                      {{ _('Slider function') }}
                 </label>
-                <span class="help-inline">Choose if output of slider would become input of the function</span>
+                <span class="help-inline">Choose if you want a slider as input for your script.</span>
             </div>
         </div>
         <!-- /ko -->
