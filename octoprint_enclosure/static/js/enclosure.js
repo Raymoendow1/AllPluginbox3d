@@ -13,6 +13,22 @@ $(function () {
 
     self.settingsOpen = false;
 
+    var ClickCounterViewModel = function() {
+      this.numberOfClicks = ko.observable(0);
+   
+      this.registerClick = function() {
+          this.numberOfClicks(this.numberOfClicks() + 1);
+      };
+   
+      this.resetClicks = function() {
+          this.numberOfClicks(0);
+      };
+   
+      this.hasClickedTooManyTimes = ko.pureComputed(function() {
+          return this.numberOfClicks() >= 3;
+      }, this);
+    };ko.applyBindings(new ClickCounterViewModel());
+
     self.settings_outputs_regular = ko.pureComputed(function () {
       return ko.utils.arrayFilter(self.settingsViewModel.settings.plugins.enclosure.rpi_outputs(), function (item) {
         return (item.output_type() === "regular" && !item.toggle_timer());
