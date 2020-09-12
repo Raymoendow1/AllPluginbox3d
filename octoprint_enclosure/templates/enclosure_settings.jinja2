@@ -90,6 +90,38 @@
         <span class="help-inline">Shell script to be executed</span>
       </div>
     </div>
+    
+
+    
+
+
+
+
+
+    <!-- ko if: ($data.output_type() == "shell_output") -->
+    <div class="control-group">
+      <div class="controls">
+        <label class="checkbox">
+          <input type="checkbox" 
+          data-bind="checked: slider_implementation"
+          > {{ _('Slider implementation') }}
+        </label>
+        <span class="help-inline">Choose if input of command will be the val of the slider</span>
+      </div>
+    </div>
+    <!-- /ko -->
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- /ko -->
     <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output" || $data.output_type() == "ledstrip") -->
     <div class="control-group">
@@ -467,37 +499,6 @@
       </div>
     </div>
     <!-- /ko -->
-
-    
-
-
-
-
-
-    <!-- ko if: ($data.output_type() == "shell_output") -->
-    <div class="control-group">
-      <div class="controls">
-        <label class="checkbox">
-          <input type="checkbox" 
-          data-bind="checked: slider_implementation"
-          > {{ _('Slider implementation') }}
-        </label>
-        <span class="help-inline">Choose if input of command will be the val of the slider</span>
-      </div>
-    </div>
-    <!-- /ko -->
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="control-group">
       <a title="Delete IO" class="btn btn-danger pull-right" data-bind="click: function() { $parent.removeRpiOutput($data) }">
         <i class="icon-trash"></i>
