@@ -181,6 +181,30 @@
     <!-- /ko -->
 
 
+
+
+
+
+
+    <!-- ko if: ($data.output_type() == "shell_output")  -->
+     <div class="control-group">
+      <div class="controls">
+        <label class="checkbox">
+          <input type="checkbox" data-bind="checked: dummy"> {{ _('Slider implementation') }}
+        </label>
+        <span class="help-inline">Choose if input of command will be the val of the slider</span>
+      </div>
+    </div>
+    <!-- /ko -->
+
+
+
+
+
+
+
+
+
     <!-- ko ifnot: (($data.output_type() == "regular" || $data.output_type() == "pwm") &&  $data.toggle_timer()) -->
     <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output") -->
     <!-- ko ifnot: ($data.output_type() == "pwm" && $data.pwm_temperature_linked()) -->
