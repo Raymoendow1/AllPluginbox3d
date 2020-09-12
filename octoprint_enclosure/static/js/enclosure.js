@@ -21,8 +21,7 @@ $(function () {
     
     self.settings_possible_outputs = ko.pureComputed(function () {
       return ko.utils.arrayFilter(self.settingsViewModel.settings.plugins.enclosure.rpi_outputs(), function (item) {
-        return ((item.output_type() === "regular" && !item.toggle_timer()) || item.output_type() === "gcode_output" || item.output_type() === "shell_output");
-      });
+        return ((item.output_type() === "regular" && !item.toggle_timer()) || item.output_type() === "gcode_output" || item.output_type() === "shell_output" || item.output_type() === "slider");      });
     });
 
     self.rpi_inputs_temperature_sensors = ko.pureComputed(function () {
