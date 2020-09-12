@@ -44,7 +44,7 @@ $(function () {
       });
     });
 
-    self.slider_implementation = ko.observable(false);
+    self.slider_implementation = ko.observable();
     self.use_sudo = ko.observable();
     self.gcode_control = ko.observable();
     self.neopixel_dma = ko.observable();
