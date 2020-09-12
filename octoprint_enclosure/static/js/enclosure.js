@@ -104,6 +104,21 @@ $(function () {
       return return_value;
     };
 
+    self.hasAnySlicerOutput = function(){
+      return_value = false;
+      self.rpi_outputs().forEach(function(output) {
+        var index = output.index_id();
+        var sliderbool = output.use_slider();
+        if((output.output_type() == "shell_output" && output.use_slider()){
+          new PNotify({
+            title: "Using slider",
+            text: "A slider has been chosen to adjust a scripts value.",
+            type: "text"
+          });
+        }
+      });
+    }
+
     self.hasAnyNavbarOutput = function(){
       return_value = false;
       self.rpi_outputs().forEach(function (output) {
@@ -658,15 +673,7 @@ $(function () {
       }
     };
 
-    // self.handleShellSlicer = function(item){
-    //   var index = item.index_id();
-    //   var sliderbool = item.use_slider();
-    //   new PNotify({
-    //     title: "Using slider",
-    //     text: "A slider has been chosen to adjust a scripts value.",
-    //     type: "text"
-    //   });
-    // }
+
 
     self.handleLedstripColor = function (item) {
       var index = item.index_id() ;
