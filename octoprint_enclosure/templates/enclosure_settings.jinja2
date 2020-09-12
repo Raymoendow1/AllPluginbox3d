@@ -203,7 +203,7 @@
 
 
         <!-- ko ifnot: (($data.output_type() == "regular" || $data.output_type() == "pwm") &&  $data.toggle_timer()) -->
-        <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output") -->
+        <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm") -->
         <!-- ko ifnot: ($data.output_type() == "pwm" && $data.pwm_temperature_linked()) -->
         <div class="control-group">
             <div class="controls">
