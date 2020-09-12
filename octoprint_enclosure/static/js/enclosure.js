@@ -375,7 +375,7 @@ $(function () {
         index_id: ko.observable(nextIndex),
         label: ko.observable("Ouput " + nextIndex),
         output_type: ko.observable("regular"),
-        shell_script: ko.observable(""),
+        shell_script: ko.observable("test?"),
         gpio_pin: ko.observable(0),
         gpio_status: ko.observable(false),
         hide_btn_ui: ko.observable(false),
