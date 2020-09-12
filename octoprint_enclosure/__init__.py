@@ -1369,6 +1369,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
                                     rpi_input['label']) + ". Sending GCODE command"
                                 self.send_notification(msg)
                     if rpi_output['output_type'] == 'shell_output':
+                        # if rpi_output['dummy'] == ''
                         command = rpi_output['shell_script']
                         self.shell_command(command)
         except Exception as ex:
