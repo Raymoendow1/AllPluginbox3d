@@ -107,6 +107,16 @@
                 <span class="help-inline">Shell script to be executed</span>
             </div>
         </div>
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox"
+                     {# data-bind="checked: auto_shutdown">  #}
+                     {{ _('Slider function') }}
+                </label>
+                <span class="help-inline">Choose if output should turn off automatomatically when print finishes</span>
+            </div>
+        </div>
         <!-- /ko -->
         <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output" || $data.output_type() == "ledstrip") -->
         <div class="control-group">
@@ -203,7 +213,7 @@
 
 
         <!-- ko ifnot: (($data.output_type() == "regular" || $data.output_type() == "pwm") &&  $data.toggle_timer()) -->
-        <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm") -->
+        <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output") -->
         <!-- ko ifnot: ($data.output_type() == "pwm" && $data.pwm_temperature_linked()) -->
         <div class="control-group">
             <div class="controls">
@@ -292,7 +302,6 @@
         <!-- /ko -->
 
         <!-- ko if: ($data.output_type() == "regular" || $data.output_type() == "gcode_output" ||  $data.output_type() == "shell_output" ||  $data.output_type() == "ledstrip") -->
-        {# <!-- /ko --> #}
         <div class="control-group">
             <div class="controls">
                 <label class="checkbox">
