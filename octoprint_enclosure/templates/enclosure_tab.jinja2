@@ -187,11 +187,11 @@
 <h4>
     <span data-bind="html: label"> </span>
     <span class="badge">Shell Script</span>
-    <!-- ko if: ($data.dummy())  -->
+    <!-- ko if: ($data.slider())  -->
     <div> 
         <input type="range" min="0" max="1000000" value="990000" class="slider" >
     </div>
-    <!-- ko -->
+    <!-- /ko -->
 </h4>
 <div>
     <button data-bind="enable: $root.isUser(), click: $root.handleShellOutput" class="btn">Execute Script</button>
