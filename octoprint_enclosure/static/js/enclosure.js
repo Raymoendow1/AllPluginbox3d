@@ -109,15 +109,13 @@ $(function () {
       self.rpi_outputs().forEach(function(output) {
         var index = output.index_id();
         var sliderbool = output.use_slider();
-        if((output.output_type() == "shell_output" && output.use_slider()){
-          new PNotify({
-            title: "Using slider",
-            text: "A slider has been chosen to adjust a scripts value.",
-            type: "text"
-          });
+        if(output.output_type() == "shell_output" && output.use_slider()){
+          return_value=true;
+          return false;
         }
-      });
-    }
+       });
+      return return_value;
+    };
 
     self.hasAnyNavbarOutput = function(){
       return_value = false;
