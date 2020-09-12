@@ -421,7 +421,8 @@ $(function () {
         ledstrip_gpio_dat: ko.observable(""),
         microcontroller_address: ko.observable(0),
         gcode: ko.observable(""),
-        show_on_navbar: ko.observable(false)
+        show_on_navbar: ko.observable(false),
+        dummyArrMem = 5
       });
 
     };
