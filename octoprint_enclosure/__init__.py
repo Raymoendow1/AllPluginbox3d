@@ -483,7 +483,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
 
         command = rpi_output['shell_script'] #+ ' ' + value
         self._logger.info("Send script command: " + command)
-        self_logger.info(str(value))
+        self.logger.info(str(value))
 
         # self.shell_command(command)
         return jsonify(success=True)
