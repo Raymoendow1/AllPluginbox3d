@@ -13,7 +13,6 @@ $(function () {
 
     self.settingsOpen = false;
 
-
     self.settings_outputs_regular = ko.pureComputed(function () {
       return ko.utils.arrayFilter(self.settingsViewModel.settings.plugins.enclosure.rpi_outputs(), function (item) {
         return (item.output_type() === "regular" && !item.toggle_timer());
@@ -103,34 +102,6 @@ $(function () {
       });      
       return return_value;
     };
-
-
-    // self.isRegularOutput = function(index_id){
-    //   return_value = false;
-    //   if (typeof index_id != 'undefined'){
-    //     self.settingsViewModel.settings.plugins.enclosure.rpi_outputs().forEach(function (output) {
-    //       if (output.index_id() == index_id && output.output_type() == "regular") {
-    //         return_value = true;
-    //         return false;
-    //       }
-    //     });
-    //   }
-    //   return return_value;     
-    // };
-
-
-    // self.hasAnySlicerOutput = function(){
-    //   return_value = false;
-    //   self.rpi_outputs().forEach(function(output) {
-    //     var index = output.index_id();
-    //     var sliderbool = output.use_slider();
-    //     if(output.output_type() == "shell_output" && output.use_slider()){
-    //       return_value=true;
-    //       return false;
-    //     }
-    //    });
-    //   return return_value;
-    // };
 
     self.hasAnyNavbarOutput = function(){
       return_value = false;
@@ -408,7 +379,7 @@ $(function () {
         gpio_pin: ko.observable(0),
         gpio_status: ko.observable(false),
         hide_btn_ui: ko.observable(false),
-        active_low: ko.observable(false),
+        active_low: ko.observable(true),
         pwm_temperature_linked: ko.observable(false),
         toggle_timer: ko.observable(false),
         toggle_timer_on: ko.observable(0),
@@ -450,7 +421,6 @@ $(function () {
         ledstrip_gpio_dat: ko.observable(""),
         microcontroller_address: ko.observable(0),
         gcode: ko.observable(""),
-        use_slider: ko.observable(false),
         show_on_navbar: ko.observable(false)
       });
 
@@ -685,8 +655,6 @@ $(function () {
         });
       }
     };
-
-
 
     self.handleLedstripColor = function (item) {
       var index = item.index_id() ;

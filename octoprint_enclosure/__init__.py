@@ -790,9 +790,9 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
             if self.development_mode:
                 temp, hum = self.read_dummy_temp()
             else:
-                # if sensor['temp_sensor_type'] in ["11", "22", "2302"]:
-                #     temp, hum = self.read_dht_temp(sensor['temp_sensor_type'], sensor['gpio_pin'])
-                if sensor['temp_sensor_type'] == "18b20":
+                if sensor['temp_sensor_type'] in ["11", "22", "2302"]:
+                    temp, hum = self.read_dht_temp(sensor['temp_sensor_type'], sensor['gpio_pin'])
+                elif sensor['temp_sensor_type'] == "18b20":
                     temp = self.read_18b20_temp(sensor['ds18b20_serial'])
                     hum = 0
                 elif sensor['temp_sensor_type'] == "bme280":
@@ -869,18 +869,6 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
             self._logger.info("Failed to execute python scripts, try disabling use SUDO on advanced section.")
             self.log_error(ex)
             return 0
-
-    # def send_cmd(self, cmd):
-    #     try:
-    #         script = os.path.dirname(os.path.realpath(__file__))
-    #     if self._settings.get(["use_sudo"]):
-    #         sudo_str = "sudo "
-    #     else:
-    #         sudo_str = ""
-    #     cmd = sudo_str + "python " + script
-    #     stdout = (Popen(cmd, shell=True, stdout=PIPE).stdout).read()
-        
-
 
     def read_dht_temp(self, sensor, pin):
         try:
@@ -1381,7 +1369,6 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
                                     rpi_input['label']) + ". Sending GCODE command"
                                 self.send_notification(msg)
                     if rpi_output['output_type'] == 'shell_output':
-                        # if rpi_output['dummy'] == ''
                         command = rpi_output['shell_script']
                         self.shell_command(command)
         except Exception as ex:
