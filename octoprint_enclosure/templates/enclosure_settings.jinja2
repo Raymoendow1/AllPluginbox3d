@@ -90,11 +90,11 @@
         <span class="help-inline">Shell script to be executed</span>
       </div>
     </div>
-    <!-- ko with: use_slider-->
+    <!-- ko with: $data.output_type() -->
     <div class="control-group">
       <div class="controls">
         <label class="checkbox">
-          <input type="checkbox" data-bind="checked: $parent.use_slider"> {{ _('Use slider') }}
+          <input type="checkbox" data-bind="checked: function() {use_slider}"> {{ _('Use slider') }}
         </label>
         <span class="help-inline">Use a slider as input of your shell-script.</span>
       </div>
