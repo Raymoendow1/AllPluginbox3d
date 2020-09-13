@@ -472,18 +472,10 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
     @octoprint.plugin.BlueprintPlugin.route("/sendShellCommand", methods=["GET"])
     def send_shell_command_old(self):
         output_index = self.to_int(request.values["index_id"])
-        slider = True if request.values["status"] == 'true' else False
-        value = ""
-
-        self._logger.info("Shell command activated" + command)
 
         rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
 
-        # value = rpi_output["gpio_pin"]
-        # value = str(100-int(value)) + "0000"
-        command = (rpi_output['shell_script'] + ' ' + value if (not(slider)) else "")
-        self._logger.info("Send script command: " + command)
-        
+        command = rpi_output['shell_script']
         self.shell_command(command)
         return jsonify(success=True)
 
@@ -1378,10 +1370,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
                                 self.send_notification(msg)
                     if rpi_output['output_type'] == 'shell_output':
                         command = rpi_output['shell_script']
-                        slider = ""                                               # I added this
-                        if (self.to_int(self._settings.get(["use_slider"]))):     # I added this
-                            self._logger.info('Slider is activated!')             # I added this
-                        self.shell_command(command) + ' ' + slider                # I added + ' ' + slider
+                        self.shell_command(command)
         except Exception as ex:
             self.log_error(ex)
             pass
@@ -1807,7 +1796,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
     def get_settings_defaults(self):
         return dict(rpi_outputs=[], rpi_inputs=[],
             filament_sensor_gcode="G91  ;Set Relative Mode \n" + "G1 E-5.000000 F500 ;Retract 5mm\n" + "G1 Z15 F300         ;move Z up 15mm\n" + "G90            ;Set Absolute Mode\n " + "G1 X20 Y20 F9000      ;Move to hold position\n" + "G91            ;Set Relative Mode\n" + "G1 E-40 F500      ;Retract 40mm\n" + "M0            ;Idle Hold\n" + "G90            ;Set Absolute Mode\n" + "G1 F5000         ;Set speed limits\n" + "G28 X0 Y0         ;Home X Y\n" + "M82            ;Set extruder to Absolute Mode\n" + "G92 E0         ;Set Extruder to 0",
-            use_sudo=True, use_slider=False, slid_val=10, neopixel_dma=10, debug=False, gcode_control=False, debug_temperature_log=False,
+            use_sudo=True, neopixel_dma=10, debug=False, gcode_control=False, debug_temperature_log=False,
             use_board_pin_number=False, notification_provider="disabled", notification_api_key="",
             notification_event_name="printer_event", notifications=[{
                                                                         'printFinish'      : True,
