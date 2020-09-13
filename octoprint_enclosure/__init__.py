@@ -475,7 +475,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         slider = True if request.values["status"] == 'true' else False
         value = ""
 
-        value = self._settings.get(["slid_val"])
+        value = self._settings.get(["temp_ctr_new_set_value"])
         value = str(100-int(value)) + "0000"
         rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
 
