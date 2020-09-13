@@ -94,13 +94,13 @@
       <div class="controls">
         <label class="checkbox">
           <input type="checkbox" 
-          <!-- data-bind="checked: use_slider">  -->
-          {{ _('Use slider') }}
+          <!-- data-bind="checked: auto_startup" -->
+          > {{ _('Use slider') }}
         </label>
-        <span class="help-inline">Use a slider as input of your shell-script.
-        </span>
+        <span class="help-inline">Use a slider as input of your shell-script.</span>
       </div>
     </div>
+
     <!-- /ko -->
     <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output" || $data.output_type() == "ledstrip") -->
     <div class="control-group">
