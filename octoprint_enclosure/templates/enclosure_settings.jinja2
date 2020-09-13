@@ -10,7 +10,7 @@
   <div data-bind="foreach: settingsViewModel.settings.plugins.enclosure.rpi_outputs">
     <!-- <div class="controls">
     <h5>IO <span data-bind="text: $index"> </span></h5>
-  </div> -->
+    </div> -->
     <div class="control-group">
       <label class="control-label">{{ _('Output Type') }}</label>
       <div class="controls">
@@ -90,15 +90,15 @@
         <span class="help-inline">Shell script to be executed</span>
       </div>
     </div>
-    <!-- /ko -->
     <div class="control-group">
       <div class="controls">
         <label class="checkbox">
-          <input type="checkbox" data-bind="checked: use_slider"> {{ _('Use slider') }}
+          <input type="checkbox"> {{ _('Use slider') }}
         </label>
         <span class="help-inline">Use a slider as input of your shell-script.</span>
       </div>
     </div>
+    <!-- /ko -->
     <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output" || $data.output_type() == "ledstrip") -->
     <div class="control-group">
       <label class="control-label">{{ _('IO Number') }}</label>
