@@ -45,7 +45,7 @@ $(function () {
     });
 
     self.use_sudo = ko.observable();
-    self.use_slider = ko.observable(false);
+    self.use_slider = ko.observable();
     self.gcode_control = ko.observable();
     self.neopixel_dma = ko.observable();
     self.debug = ko.observable();
