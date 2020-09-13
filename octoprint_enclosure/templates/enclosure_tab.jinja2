@@ -192,7 +192,7 @@
 <!-- ko if: ($root.use_slider())  -->
 
 <div class="slidecontainer">
-  <input type="range" min="1" max="100" class="slider" id="myRange" data-bind="value: $root.settingsViewModel.settings.plugins.enclosure.slid_val">
+  <input type="range" min="1" max="100" class="slider" id="myRange" data-bind="value: $root.settingsViewModel.settings.plugins.enclosure.slid_val() ">
 </div>
 
 <!-- /ko -->
