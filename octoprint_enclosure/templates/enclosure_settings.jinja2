@@ -108,12 +108,12 @@
             </div>
         </div>
         
-        <!-- ko if: ($root.hasAnySlicerOutput($data.use_slider))  -->
+        <!-- ko if: ($data.show_on_navbar)  -->
         <div class="control-group">
             <div class="controls">
                 <label class="checkbox">
                     <input type="checkbox" 
-                    {# data-bind="checked: use_slider"> #}
+                    data-bind="checked: show_on_navbar">
                     {{ _('Slider function') }}
                 </label>
                 <span class="help-inline">Choose if you want a slider as input for your script.</span>
