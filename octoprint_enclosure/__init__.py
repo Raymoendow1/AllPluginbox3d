@@ -482,8 +482,9 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
 
         command = rpi_output['shell_script'] #+ ' ' + value
-        self._logger.info("Send script command: " + command + value)
-        self.shell_command(command)
+        self._logger.info("Send script command: " + command + ' ' + '1' if value else '0')
+
+        # self.shell_command(command)
         return jsonify(success=True)
 
     @octoprint.plugin.BlueprintPlugin.route("/setAutoStartUp", methods=["GET"])
