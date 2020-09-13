@@ -90,14 +90,16 @@
         <span class="help-inline">Shell script to be executed</span>
       </div>
     </div>
+    <!-- ko with: use_slider-->
     <div class="control-group">
       <div class="controls">
         <label class="checkbox">
-          <input type="checkbox"> {{ _('Use slider') }}
+          <input type="checkbox" data-bind="checked: $parent.use_slider"> {{ _('Use slider') }}
         </label>
         <span class="help-inline">Use a slider as input of your shell-script.</span>
       </div>
     </div>
+    <!-- /ko -->
     <!-- /ko -->
     <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output" || $data.output_type() == "ledstrip") -->
     <div class="control-group">
