@@ -475,16 +475,13 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         slider = True if request.values["status"] == 'true' else False
         value = ""
 
-        self._logger.info("stat of slider: " + str(1) if slider else str(0))
-
         value = self._settings.get(["slid_val"])
-        value = str(value) + "0000"
+        value = str(int(value)-100) + "0000"
         rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
 
         command = (rpi_output['shell_script'] + ' ' + value if (not(slider)) else "")
         self._logger.info("Send script command: " + command)
-        self._logger.info(str(value))
-
+        
         self.shell_command(command)
         return jsonify(success=True)
 
