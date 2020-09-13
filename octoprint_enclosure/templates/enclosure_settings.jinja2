@@ -83,15 +83,8 @@
       </div>
     </div>
     
-    <div class="control-group">
-      <div class="controls">
-        <label class="checkbox">
-          <input type="checkbox" data-bind="checked: $data.use_slider()"> {{ _('Use slider') }}
-        </label>
-        <span class="help-inline">Use slider as input of your shell script.</span>
-      </div>
-    </div>
-    
+          <input type="checkbox" data-bind="checked: use_slider()"> {{ _('Use slider') }}
+
     <!-- ko if: ($data.output_type() == "shell_output")  -->
     <div class="control-group">
       <label class="control-label">{{ _('Script') }}</label>
