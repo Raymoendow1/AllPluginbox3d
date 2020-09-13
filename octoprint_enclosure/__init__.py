@@ -475,14 +475,15 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         slider = True if request.values["status"] == 'true' else False
         value = ""
 
-        # if not slider:
+        self._logger.info("stat of slider: " + slider)
+
         value = self._settings.get(["slid_val"])
 
         rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
 
         command = rpi_output['shell_script'] #+ ' ' + value
-        self.shell_command(command)
         self._logger.info("Send script command: " + command + value)
+        self.shell_command(command)
         return jsonify(success=True)
 
     @octoprint.plugin.BlueprintPlugin.route("/setAutoStartUp", methods=["GET"])
