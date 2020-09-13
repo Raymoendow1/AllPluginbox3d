@@ -92,10 +92,9 @@
     </div>
     <!-- ko with: $data.use_slider() -->
     <div class="control-group">
+      <label class="control-label">{{ _('Slider') }}</label>
       <div class="controls">
-        <label class="checkbox">
-          <input type="checkbox" data-bind="checked: function() {use_slider}"> {{ _('Use slider') }}
-        </label>
+          <input type="text" class="input-block-level" data-bind="value: use_slider">
         <span class="help-inline">Use a slider as input of your shell-script.</span>
       </div>
     </div>
