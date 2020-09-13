@@ -82,17 +82,17 @@
         <span class="help-inline">Id used for API control</span>
       </div>
     </div>
-    
-    <input type="checkbox">
-
     <!-- ko if: ($data.output_type() == "shell_output")  -->
     <div class="control-group">
       <label class="control-label">{{ _('Script') }}</label>
       <div class="controls">
         <input type="text" class="input-block-level" data-bind="value: shell_script">
         <span class="help-inline">Shell script to be executed</span>
+        
+        <input type="text" class="input-block-level" data-bind="value: microcontroller_address">
       </div>
     </div>
+
 
     <!-- /ko -->
     <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output" || $data.output_type() == "ledstrip") -->
@@ -787,6 +787,13 @@
   <div id="advanced_enclosure" class="accordion-body collapse">
     <form class="form-horizontal">
       
+
+
+
+
+
+
+
       <!-- <div class="control-group">
         <div class="controls">
           <label class="checkbox">
@@ -795,6 +802,16 @@
           <span class="help-inline">Use slider as input of your shell script.</span>
         </div>
       </div> -->
+
+
+
+
+
+
+
+
+
+
 
       <div class="control-group">
         <div class="controls">
