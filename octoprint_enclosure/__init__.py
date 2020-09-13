@@ -476,7 +476,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         value = ""
 
         if not slider:
-            value = self._settings.get(["lid_val"]) or 10
+            value = self._settings.get(["slid_val"]) or 10
 
         rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
 
