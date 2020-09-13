@@ -1371,7 +1371,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
                     if rpi_output['output_type'] == 'shell_output':
                         command = rpi_output['shell_script']
                         slider = ""                                               # I added this
-                        if (self.to_int(self._settings.get(["use_slider"]))):               # I added this
+                        if (self.to_int(self._settings.get(["use_slider"]))):     # I added this
                             self._logger.info('Slider is activated!')             # I added this
                         self.shell_command(command) + ' ' + slider                # I added + ' ' + slider
         except Exception as ex:
