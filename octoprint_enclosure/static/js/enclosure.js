@@ -44,7 +44,7 @@ $(function () {
     });
 
     
-    // self.use_slider = ko.observable();
+    self.use_slider = ko.observable();
     self.slid_val = ko.observable();
     self.use_sudo = ko.observable();
     self.gcode_control = ko.observable();
@@ -285,7 +285,7 @@ $(function () {
     self.bindFromSettings = function(){
       self.rpi_outputs(self.settingsViewModel.settings.plugins.enclosure.rpi_outputs());
       self.rpi_inputs(self.settingsViewModel.settings.plugins.enclosure.rpi_inputs());
-      // self.use_slider(self.settingsViewModel.settings.plugins.enclosure.use_slider());
+      self.use_slider(self.settingsViewModel.settings.plugins.enclosure.use_slider());
       self.slid_val(self.settingsViewModel.settings.plugins.enclosure.slid_val());
       self.use_sudo(self.settingsViewModel.settings.plugins.enclosure.use_sudo());
       self.gcode_control(self.settingsViewModel.settings.plugins.enclosure.gcode_control());
@@ -424,7 +424,7 @@ $(function () {
         ledstrip_gpio_dat: ko.observable(""),
         microcontroller_address: ko.observable(0),
         gcode: ko.observable(""),
-        use_slider: ko.observable(false),
+        // use_slider: ko.observable(false),
         show_on_navbar: ko.observable(false)
       });
 
