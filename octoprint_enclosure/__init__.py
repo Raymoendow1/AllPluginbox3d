@@ -475,6 +475,8 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
         slider = True if request.values["status"] == 'true' else False
         value = ""
 
+        self._logger.info("Shell command activated" + command)
+
         rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
 
         # value = rpi_output["gpio_pin"]

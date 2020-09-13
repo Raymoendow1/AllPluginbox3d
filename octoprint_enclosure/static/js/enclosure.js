@@ -698,44 +698,6 @@ $(function () {
       return !isNaN(parseFloat(n)) && isFinite(n);
     };
 
-
-
-
-
-    //#######################        custom functions         ##############################//
-    self.slider = function (){
-      return document.getElementById("myRange").value;
-    }
-
-    self.handleFan = function (item) {
-      var fan_val = item.slider();
-
-      new PNotify({
-        title: "Enclosure",
-        text: "Duty Cycle value needs to be between 0 and 100!",
-        type: "error"
-        });
-      // } else {
-      //   var request = { new_duty_cycle: pwm_value, index_id: item.index_id() };
-      //   $.ajax({
-      //     type: "GET",
-      //     dataType: "json",
-      //     data: request,
-      //     url: self.buildPluginUrl("/setPWM"),
-      //     success: function (data) {
-      //       item.new_duty_cycle("");
-      //       item.duty_cycle(pwm_value);
-      //       self.getUpdateUI();
-      //     }
-        // });
-      // }
-    };
-
-
-
-
-
-
     self.buildPluginUrl = function (path) {
       return window.PLUGIN_BASEURL + self.pluginName + path;
     };
@@ -750,4 +712,3 @@ $(function () {
   });
 
 });
-
