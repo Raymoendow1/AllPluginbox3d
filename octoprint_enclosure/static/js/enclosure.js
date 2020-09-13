@@ -43,7 +43,9 @@ $(function () {
       });
     });
 
+    
     self.use_slider = ko.observable();
+    self.slid_val = ko.observable();
     self.use_sudo = ko.observable();
     self.gcode_control = ko.observable();
     self.neopixel_dma = ko.observable();
@@ -284,6 +286,7 @@ $(function () {
       self.rpi_outputs(self.settingsViewModel.settings.plugins.enclosure.rpi_outputs());
       self.rpi_inputs(self.settingsViewModel.settings.plugins.enclosure.rpi_inputs());
       self.use_slider(self.settingsViewModel.settings.plugins.enclosure.use_slider());
+      self.slid_val(self.settingsViewModel.settings.plugins.enclosure.slid_val());
       self.use_sudo(self.settingsViewModel.settings.plugins.enclosure.use_sudo());
       self.gcode_control(self.settingsViewModel.settings.plugins.enclosure.gcode_control());
       self.neopixel_dma(self.settingsViewModel.settings.plugins.enclosure.neopixel_dma());
@@ -532,6 +535,7 @@ $(function () {
 
     self.handleShellOutput = function (item, form) {
       var request = {
+        "status": !self.use_slider(),
         "index_id": item.index_id()
       };
 
