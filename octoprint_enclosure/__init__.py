@@ -477,7 +477,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
 
         rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
 
-        # value = rpi_output["temp_ctr_new_set_value"]
+        # value = rpi_output["gpio_pin"]
         # value = str(100-int(value)) + "0000"
         command = (rpi_output['shell_script'] + ' ' + value if (not(slider)) else "")
         self._logger.info("Send script command: " + command)
