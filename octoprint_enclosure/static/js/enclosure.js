@@ -104,18 +104,18 @@ $(function () {
       return return_value;
     };
 
-    self.hasAnySlicerOutput = function(){
-      return_value = false;
-      self.rpi_outputs().forEach(function(output) {
-        var index = output.index_id();
-        var sliderbool = output.use_slider();
-        if(output.output_type() == "shell_output" && output.use_slider()){
-          return_value=true;
-          return false;
-        }
-       });
-      return return_value;
-    };
+    // self.hasAnySlicerOutput = function(){
+    //   return_value = false;
+    //   self.rpi_outputs().forEach(function(output) {
+    //     var index = output.index_id();
+    //     var sliderbool = output.use_slider();
+    //     if(output.output_type() == "shell_output" && output.use_slider()){
+    //       return_value=true;
+    //       return false;
+    //     }
+    //    });
+    //   return return_value;
+    // };
 
     self.hasAnyNavbarOutput = function(){
       return_value = false;
