@@ -42,7 +42,7 @@ $(function () {
         return (self.humidityCapableSensor(sensor.temp_sensor_type()));
       });
     });
-
+    
     
     self.use_slider = ko.observable();
     self.slid_val = ko.observable();
