@@ -533,7 +533,7 @@ $(function () {
 
     self.handleShellOutput = function (item, form) {
       var request = {
-        "status": item.use_slider(),
+        // "status": item.use_slider(),
         "index_id": item.index_id()
       };
 
