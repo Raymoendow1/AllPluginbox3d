@@ -42,9 +42,7 @@ $(function () {
         return (self.humidityCapableSensor(sensor.temp_sensor_type()));
       });
     });
-    
-    
-    // self.use_slider = ko.observable();
+
     self.use_sudo = ko.observable();
     self.gcode_control = ko.observable();
     self.neopixel_dma = ko.observable();
@@ -284,7 +282,6 @@ $(function () {
     self.bindFromSettings = function(){
       self.rpi_outputs(self.settingsViewModel.settings.plugins.enclosure.rpi_outputs());
       self.rpi_inputs(self.settingsViewModel.settings.plugins.enclosure.rpi_inputs());
-      // self.use_slider(self.settingsViewModel.settings.plugins.enclosure.use_slider());
       self.use_sudo(self.settingsViewModel.settings.plugins.enclosure.use_sudo());
       self.gcode_control(self.settingsViewModel.settings.plugins.enclosure.gcode_control());
       self.neopixel_dma(self.settingsViewModel.settings.plugins.enclosure.neopixel_dma());
@@ -369,7 +366,9 @@ $(function () {
     };
 
     self.addRpiOutput = function () {
+
       var arrRelaysLength = self.settingsViewModel.settings.plugins.enclosure.rpi_outputs().length;
+
       var nextIndex = arrRelaysLength == 0 ? 1 : self.settingsViewModel.settings.plugins.enclosure.rpi_outputs()[arrRelaysLength - 1].index_id() + 1;
 
       self.settingsViewModel.settings.plugins.enclosure.rpi_outputs.push({
@@ -380,7 +379,7 @@ $(function () {
         gpio_pin: ko.observable(0),
         gpio_status: ko.observable(false),
         hide_btn_ui: ko.observable(false),
-        active_low: ko.observable(false),
+        active_low: ko.observable(true),
         pwm_temperature_linked: ko.observable(false),
         toggle_timer: ko.observable(false),
         toggle_timer_on: ko.observable(0),
@@ -422,7 +421,6 @@ $(function () {
         ledstrip_gpio_dat: ko.observable(""),
         microcontroller_address: ko.observable(0),
         gcode: ko.observable(""),
-        // use_slider: ko.observable(false),
         show_on_navbar: ko.observable(false)
       });
 
@@ -533,7 +531,6 @@ $(function () {
 
     self.handleShellOutput = function (item, form) {
       var request = {
-        // "status": !item.use_slider(),
         "index_id": item.index_id()
       };
 
