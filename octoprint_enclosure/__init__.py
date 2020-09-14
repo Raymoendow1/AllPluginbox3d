@@ -471,7 +471,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
 
     @octoprint.plugin.BlueprintPlugin.route("/sendShellCommand", methods=["GET"])
     def send_shell_command_old(self):
-		# sliderFunc = True if request.values["status"] == 'true' else False
+		sliderFunc = True if request.values["status"] == 'true' else False
 		output_index = self.to_int(request.values["index_id"])
 		# value = ""
 
