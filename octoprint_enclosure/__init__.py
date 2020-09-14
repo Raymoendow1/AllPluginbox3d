@@ -471,13 +471,17 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
 
     @octoprint.plugin.BlueprintPlugin.route("/sendShellCommand", methods=["GET"])
     def send_shell_command_old(self):
-        output_index = self.to_int(request.values["index_id"])
+		sliderFunc = True if request.values["status"] == 'true' else False
+		output_index = self.to_int(request.values["index_id"])
+		value = ""
 
-        rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
+		rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
 
-        command = rpi_output['shell_script']
-        self.shell_command(command)
-        return jsonify(success=True)
+		value = rpi_output['gpio_pin']
+		command = rpi_output['shell_script']
+		self._logger.info(command + value)
+		self.shell_command(command)
+		return jsonify(success=True)
 
     @octoprint.plugin.BlueprintPlugin.route("/setAutoStartUp", methods=["GET"])
     def set_auto_startup_old(self):
