@@ -1800,7 +1800,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
     def get_settings_defaults(self):
         return dict(rpi_outputs=[], rpi_inputs=[],
             filament_sensor_gcode="G91  ;Set Relative Mode \n" + "G1 E-5.000000 F500 ;Retract 5mm\n" + "G1 Z15 F300         ;move Z up 15mm\n" + "G90            ;Set Absolute Mode\n " + "G1 X20 Y20 F9000      ;Move to hold position\n" + "G91            ;Set Relative Mode\n" + "G1 E-40 F500      ;Retract 40mm\n" + "M0            ;Idle Hold\n" + "G90            ;Set Absolute Mode\n" + "G1 F5000         ;Set speed limits\n" + "G28 X0 Y0         ;Home X Y\n" + "M82            ;Set extruder to Absolute Mode\n" + "G92 E0         ;Set Extruder to 0",
-            use_sudo=True, neopixel_dma=10, debug=False, gcode_control=False, debug_temperature_log=False,
+            use_sudo=True, use_slider=False, neopixel_dma=10, debug=False, gcode_control=False, debug_temperature_log=False,
             use_board_pin_number=False, notification_provider="disabled", notification_api_key="",
             notification_event_name="printer_event", notifications=[{
                                                                         'printFinish'      : True,

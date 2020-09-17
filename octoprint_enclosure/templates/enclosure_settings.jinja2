@@ -774,6 +774,14 @@
     <div id="advanced_enclosure" class="accordion-body collapse">
         <form class="form-horizontal">
 
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox">
+                      <input type="checkbox" data-bind="checked: settingsViewModel.settings.plugins.enclosure.use_slider"> {{ _('Use Slider') }}
+                    </label>
+                    <span class="help-inline">Use slider to run python commands.</span>
+                </div>
+            </div>
 
             <div class="control-group">
                 <div class="controls">
