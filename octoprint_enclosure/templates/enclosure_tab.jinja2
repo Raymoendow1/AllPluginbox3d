@@ -188,9 +188,9 @@
     <span data-bind="html: label"> </span>
     <span class="badge">Shell Script</span>
 </h4>
-<!-- ko if: ($data.use_slider()) -->
-<input type="range" min="0" max="100" name="myrange" id="myrange">
-<!-- /ko -->
+<!-- koc if: ($data.use_slider()) -->
+<!-- <input type="range" min="0" max="100" name="myrange" id="myrange"> -->
+<!-- /koc -->
 <div>
     <button data-bind="enable: $root.isUser(), click: $root.handleShellOutput" class="btn">Execute Script</button>
 </div>
