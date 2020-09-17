@@ -190,7 +190,7 @@
 </h4>
 <!-- ko if: ($root.use_slider()) -->
 <div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange" data-bind="value: gpio_pin">
+    <input type="range" min="1" max="100" value="50" id="myRange">
 </div>
 
 <!-- /ko -->
@@ -284,7 +284,7 @@
     <!-- ko if: ($data.output_type() == "temp_hum_control" && $data.temp_ctr_type() == "heater" && !$data.auto_shutdown())  -->
     <span>
         <span class="label label-important">Warning:</span>
-        <span> Consider making
+    <span> Consider making
             <b>heater</b> auto shutdown when print finish for safety reasons.</span>
     </span>
     <!-- /ko -->
