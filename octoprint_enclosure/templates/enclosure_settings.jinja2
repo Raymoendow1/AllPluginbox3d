@@ -90,6 +90,15 @@
                 <span class="help-inline">Shell script to be executed</span>
             </div>
         </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                <input type="checkbox" data-bind="checked: settingsViewModel.settings.plugins.enclosure.use_slider"> {{ _('Use Slider') }}
+              </label>
+                <span class="help-inline">Use slider to run python commands.</span>
+            </div>
+        </div>
         <!-- /ko -->
         <!-- ko ifnot: ($data.output_type() == "gcode_output" || $data.output_type() == "temperature_alarm" || $data.output_type() == "shell_output" || $data.output_type() == "ledstrip") -->
         <div class="control-group">
@@ -773,15 +782,6 @@
     </a>
     <div id="advanced_enclosure" class="accordion-body collapse">
         <form class="form-horizontal">
-
-            <div class="control-group">
-                <div class="controls">
-                    <label class="checkbox">
-                      <input type="checkbox" data-bind="checked: settingsViewModel.settings.plugins.enclosure.use_slider"> {{ _('Use Slider') }}
-                    </label>
-                    <span class="help-inline">Use slider to run python commands.</span>
-                </div>
-            </div>
 
             <div class="control-group">
                 <div class="controls">
