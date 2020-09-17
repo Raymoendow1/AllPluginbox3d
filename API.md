@@ -133,7 +133,6 @@ Response (200):
     "output_type": string,
     "microcontroller_address": number,
     "index_id": number,
-    "use_slider": boolean,
     "new_neopixel_color": string
 }
 ```
