@@ -542,7 +542,10 @@ $(function() {
                 type: "GET",
                 dataType: "json",
                 data: request,
-                url: self.buildPluginUrl("/sendShellCommand")
+                url: self.buildPluginUrl("/sendShellCommand"),
+                success: function(data) {
+                    self.getUpdateUI();
+                }
             });
         };
 
