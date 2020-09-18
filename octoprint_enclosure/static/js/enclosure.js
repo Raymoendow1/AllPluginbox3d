@@ -392,7 +392,7 @@ $(function() {
                 gpio_pin: ko.observable(0),
                 gpio_status: ko.observable(false),
                 hide_btn_ui: ko.observable(false),
-                active_low: ko.observable(true),
+                active_low: ko.observable(false),
                 pwm_temperature_linked: ko.observable(false),
                 toggle_timer: ko.observable(false),
                 toggle_timer_on: ko.observable(0),
