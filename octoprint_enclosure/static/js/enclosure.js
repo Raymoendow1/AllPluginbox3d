@@ -115,6 +115,17 @@ $(function() {
             return return_value;
         };
 
+        self.hasAnySliderOutput = function() {
+            return_value = false;
+            self.rpi_outputs().forEach(function(output) {
+                if ((output.output_type() == "shell_output") && output.show_on_navbar()) {
+                    return_value = true;
+                    return false;
+                }
+            });
+            return return_value;
+        }
+
         self.hasAnyNavbarTemperature = function() {
             return_value = false;
             self.rpi_inputs_temperature_sensors().forEach(function(sensor) {
