@@ -115,16 +115,16 @@ $(function() {
             return return_value;
         };
 
-        self.hasAnySliderOutput = function() {
-            return_value = false;
-            self.rpi_outputs().forEach(function(output) {
-                if ((output.output_type() == "shell_output") && output.use_slider()) {
-                    return_value = true;
-                    return false;
-                }
-            });
-            return return_value;
-        }
+        // self.hasAnySliderOutput = function() {
+        //     return_value = false;
+        //     self.rpi_outputs().forEach(function(output) {
+        //         if ((output.output_type() == "shell_output") && output.use_slider()) {
+        //             return_value = true;
+        //             return false;
+        //         }
+        //     });
+        //     return return_value;
+        // }
 
         self.hasAnyNavbarTemperature = function() {
             return_value = false;
@@ -434,7 +434,7 @@ $(function() {
                 ledstrip_gpio_dat: ko.observable(""),
                 microcontroller_address: ko.observable(0),
                 gcode: ko.observable(""),
-                use_slider: ko.observable(false),
+                // use_slider: ko.observable(false),
                 show_on_navbar: ko.observable(false)
             });
 
@@ -545,7 +545,7 @@ $(function() {
 
         self.handleShellOutput = function(item, form) {
             var request = {
-                "status": !item.use_slider(),
+                // "status": !item.use_slider(),
                 "index_id": item.index_id()
             };
 
