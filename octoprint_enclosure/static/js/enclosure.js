@@ -118,7 +118,7 @@ $(function() {
         self.hasAnySliderOutput = function() {
             return_value = false;
             self.rpi_outputs().forEach(function(output) {
-                if ((output.output_type() == "shell_output") && output.show_on_navbar()) {
+                if ((output.output_type() == "shell_output") && output.use_slider()) {
                     return_value = true;
                     return false;
                 }
