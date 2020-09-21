@@ -23,9 +23,9 @@ import json
 import copy
 
 
-class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplatePlugin, octoprint.plugin.SettingsPlugin,
-                      octoprint.plugin.AssetPlugin, octoprint.plugin.BlueprintPlugin,
-                      octoprint.plugin.EventHandlerPlugin):
+class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplatePlugin, 
+                        octoprint.plugin.SettingsPlugin, octoprint.plugin.AssetPlugin, 
+                        octoprint.plugin.BlueprintPlugin, octoprint.plugin.EventHandlerPlugin):
     rpi_outputs = []
     rpi_inputs = []
     waiting_temperature = []
