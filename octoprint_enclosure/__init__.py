@@ -472,13 +472,13 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
     @octoprint.plugin.BlueprintPlugin.route("/sendShellCommand", methods=["GET"])
     def send_shell_command_old(self):
 		output_index = self.to_int(request.values["index_id"])
-        self._logger.info("send_shell_command_old. Index_id = %s", str(output_index))
+        # self._logger.info("send_shell_command_old. Index_id = %s", str(output_index))
 		# sliderFunc = True if request.values["status"] == 'true' else False
 		# value = ""
 
 		rpi_output = [r_out for r_out in self.rpi_outputs if self.to_int(r_out['index_id']) == output_index].pop()
 
-        self._logger.info("rpi_output: \n" + str(rpi_output))
+        # self._logger.info("rpi_output: \n" + str(rpi_output))
 
 		# value = rpi_output['gpio_pin']
 		command = rpi_output['shell_script']
